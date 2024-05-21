@@ -14,11 +14,23 @@ body {
     border-radius: 10px;
 }
 
-.timer{
+.input-container{
+    margin-bottom: 20px;        
+}
+
+.input-container input{
+    font-size: 24px;
+    width: 60px;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.display{
     font-size: 48px;
-    border: 2px solid black;
     margin-bottom: 20px;
-    padding: 10px;        
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .buttons{
