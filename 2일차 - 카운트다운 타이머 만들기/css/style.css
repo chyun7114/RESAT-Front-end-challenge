@@ -27,7 +27,7 @@ body {
     gap: 10px;
 }
 
-.buttons button {
+.buttons input {
     font-size: 16px;
     padding: 10px 20px;
     border: 2px solid black;
