@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.timer-body{
+    text-align: center;
+    border: 2px solid #000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.timer{
+    font-size: 48px;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    padding: 10px;        
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.buttons button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 2px solid black;
+    background: none;
+    cursor: pointer;
+}
