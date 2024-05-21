@@ -50,18 +50,16 @@ function setTimerText(){
         return;
     }
 
-    if(seconds < 0){
-        if(minutes === 0){
+    if (seconds === 0) {
+        if (minutes === 0) {
             hours--;
             minutes = 59;
             seconds = 59;
-        }
-        else{
-            seconds = 59;
+        } else {
             minutes--;
+            seconds = 59;
         }
-    }
-    else{
+    } else {
         seconds--;
     }
 
