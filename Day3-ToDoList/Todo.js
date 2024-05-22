@@ -1,6 +1,3 @@
-// <li><input type="checkbox" /> 할일 목록</li>
-
-// 버튼들
 const inputButton = document.getElementById('todo-button');
 const allShowButton = document.getElementById('all');
 const activeButton = document.getElementById('active');
@@ -13,36 +10,62 @@ let todo = {};
 let todoCount = 0;
 let activeFilter = '';
 
-inputButton.addEventListener('click', () =>{
-    // 인풋 값을 가져온다
+// 체크박스와 삭제 버튼 설정 함수
+function createCheckboxAndDeleteButton(newValue, id) {
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.checked = todo[id].isActive;
+    checkbox.addEventListener('change', (e) => {
+        todo[id].isActive = e.target.checked;
+        updateTodoStyle(newValue, e.target.checked);
+    });
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = '삭제';
+    deleteButton.className = 'delete';
+    deleteButton.addEventListener('click', () => {
+        delete todo[id];
+        todoList.removeChild(newValue);
+        console.log('Deleted: ' + id);
+    });
+
+    newValue.appendChild(checkbox);
+    newValue.appendChild(document.createTextNode(todo[id].todo));
+    newValue.appendChild(deleteButton);
+}
+
+// 할일 스타일 업데이트 함수
+function updateTodoStyle(newValue, isActive) {
+    if (isActive) {
+        newValue.style.textDecoration = 'line-through';
+    } else {
+        newValue.style.textDecoration = 'none';
+    }
+}
+
+// 새로운 할일 항목 생성 함수
+function createTodoItem(todoText, id) {
+    const newValue = document.createElement('li');
+    newValue.dataset.id = id;
+    createCheckboxAndDeleteButton(newValue, id);
+    updateTodoStyle(newValue, todo[id].isActive);
+    return newValue;
+}
+
+inputButton.addEventListener('click', () => {
     const inputValue = inputTextTodo.value;
 
-    // 값이 비어있는 경우 실행하지 않는다
-    if(inputValue.trim() !== '') { 
-        const newValue = document.createElement('li');
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.addEventListener('change', (e) => {
-            todo[newValue.dataset.id].isActive = e.target.checked;
-            if(e.target.checked)
-                console.log(newValue.dataset.id + " is checked");
-            else
-                console.log(newValue.dataset.id + " is unchecked");
-        });
-
-        newValue.appendChild(checkbox);
-        newValue.appendChild(document.createTextNode(inputValue));
-        
-        // todo 데이터셋 만들기
-        newValue.dataset.id = todoCount + 1;
-        todoList.appendChild(newValue);
+    if (inputValue.trim() !== '') { 
         todoCount++;
         todo[todoCount] = {
-            id : todoCount,
-            todo : inputValue,
-            isActive : false
+            id: todoCount,
+            todo: inputValue,
+            isActive: false
         };
-        
+
+        const newTodoItem = createTodoItem(inputValue, todoCount);
+        todoList.appendChild(newTodoItem);
+
         console.log(todo);
 
         inputTextTodo.value = '';
@@ -50,73 +73,46 @@ inputButton.addEventListener('click', () =>{
 });
 
 activeButton.addEventListener('click', () => {
-    // 모든 li 요소를 지운다
     todoList.innerHTML = '';
-
-    // 체크된 항목들만 필터링하여 표시
     for (let key in todo) {
         if (todo[key].isActive) {
-            const newValue = document.createElement('li');
-            newValue.innerHTML = '<input type="checkbox" checked disabled />' + todo[key].todo;
-            todoList.appendChild(newValue);
+            const newTodoItem = createTodoItem(todo[key].todo, key);
+            todoList.appendChild(newTodoItem);
         }
     }
-
     toggleFilter('active');
 });
 
 noActiveButton.addEventListener('click', () => {
     todoList.innerHTML = '';
-
-    // 체크되지 않은 항목들만 필터링하여 표시
     for (let key in todo) {
         if (!todo[key].isActive) {
-            const newValue = document.createElement('li');
-            newValue.innerHTML = '<input type="checkbox" disabled />' + todo[key].todo;
-            todoList.appendChild(newValue);
+            const newTodoItem = createTodoItem(todo[key].todo, key);
+            todoList.appendChild(newTodoItem);
         }
     }
-
     toggleFilter('no-active');
 });
 
-allShowButton.addEventListener('click', () =>{
+allShowButton.addEventListener('click', () => {
     todoList.innerHTML = '';
-    // 처음 상태로 필터링하여 표시한다
     for (let key in todo) {
-        if (todo.hasOwnProperty(key)) { // 해당 키가 존재하는지 확인
-            const newValue = document.createElement('li');
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.checked = todo[key].isActive || false; // isActive가 null일 경우 false로 설정
-            checkbox.addEventListener('change', (e) => {
-                todo[key].isActive = e.target.checked;
-                if (e.target.checked) {
-                    console.log(key + " is checked");
-                } else {
-                    console.log(key + " is unchecked");
-                }
-            });
-
-            newValue.appendChild(checkbox);
-            newValue.appendChild(document.createTextNode(todo[key].todo));
-            todoList.appendChild(newValue);
+        if (todo.hasOwnProperty(key)) {
+            const newTodoItem = createTodoItem(todo[key].todo, key);
+            todoList.appendChild(newTodoItem);
         }
     }
     toggleFilter('all');
 });
 
-
 function toggleFilter(filter) {
     if (activeFilter === filter) {
-        // 같은 필터를 두 번 클릭한 경우, 전체 필터로 변경하고 스타일 제거
         activeFilter = '';
         allShowButton.style.border = "none";
         noActiveButton.style.border = "none";
         activeButton.style.border = "none";
         inputButton.disabled = false;
     } else {
-        // 새로운 필터를 클릭한 경우 해당 필터로 설정하고 해당 버튼에 스타일 적용
         activeFilter = filter;
         if (filter === 'active') {
             activeButton.style.border = "2px solid lightcoral";

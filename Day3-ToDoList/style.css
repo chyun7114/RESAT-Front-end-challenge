@@ -44,16 +44,22 @@ input[type="text"] {
     background-color: #A0A0A0;
 }
 
-.todo-list {
-    margin: 20px 0;
+#todo-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
 }
 
 .todo-list li {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
+    align-items: center;
     list-style-type: none;
-    margin: 10px 0;
-    font-size: 24px;
+    background: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+    border-left: 5px solid transparent;
 }
 
 .todo-list input[type="checkbox"] {
@@ -87,4 +93,12 @@ input[type="text"] {
 
 .option:hover {
     border: 2px solid lightcoral;
+}
+
+.delete {
+    border: none;
+    color: red;
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
 }
