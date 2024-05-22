@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #B0B0B0; /* Set the background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #D3D3D3;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    width: 500px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+#todo-button {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #B0B0B0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#todo-button:hover {
+    background-color: #A0A0A0;
+}
+
+.todo-list {
+    margin: 20px 0;
+}
+
+.todo-list li {
+    display: flex;
+    justify-content: left;
+    list-style-type: none;
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.todo-list input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    border: none;
+    color: #B0B0B0;
+}
+
+.todo-list input[type="checkbox"]:checked{
+    background-color: #B0B0B0;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 100px;
+}
+  
+.option {
+    /* width 값을 조정하여 옵션의 크기를 결정 */
+    width: auto; /* 기본값으로 변경 */
+    padding: 5px 10px;
+    /* margin을 삭제하여 옆으로 새버리는 현상 해결 */
+    border: 2px solid #D3D3D3;
+    cursor: pointer;
+}
+
+.option:hover {
+    border: 2px solid lightcoral;
+}
