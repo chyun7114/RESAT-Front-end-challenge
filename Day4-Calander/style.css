@@ -1,17 +1,124 @@
-body{
+body {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 0;
-    background-color: #bfbfbf;
+    background-color: #D3D3D3;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 
-.Calander-container{
-    background-color: #D3D3D3;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 50px;
-    width: 500px;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.calendar-container {
+    width: 400px;
+    margin: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    background-color: white;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav button {
+    border: none;
+    background-color: white;
+    color: blue;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 36px;
+}
+
+.calendar-month {
+    font-size: 24px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
     text-align: center;
+}
+
+.day {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.calendar-date {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    text-align: left;
+}
+
+.date {
+    border: 1px solid black;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.memo-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: blue;
+    position: absolute;
+    bottom: 5px;
+}
+
+.memo-container {
+    width: 200px;
+    margin: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    background-color: white;
+    display: none;
+}
+
+.memo-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.memo-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+
+.saturday {
+    color: blue;
+}
+
+.sunday {
+    color: red;
+}
+
+.delete-button{
+    border: none;
+    background-color: white;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
 }
