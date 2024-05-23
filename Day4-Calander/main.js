@@ -5,9 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const memoText = document.getElementById('memoText');
     const saveMemo = document.getElementById('saveMemo');
     const closeMemo = document.getElementById('closeMemo');
-    const memoList = document.createElement('ul');
-    memoList.classList.add('memo-list');
-    memoContainer.insertBefore(memoList, memoText);
+    const memoList = document.getElementById('memo-list');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
 
@@ -25,16 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const firstDay = new Date(year, month, 1).getDay();
         const lastDate = new Date(year, month + 1, 0).getDate();
 
+        // 날짜가 없는 날은 빈칸
         for (let i = 0; i < firstDay; i++) {
             const emptyCell = document.createElement('div');
             emptyCell.classList.add('date');
             calendarDate.appendChild(emptyCell);
         }
-
+        
+        // 날짜가 있는 날은 숫자 채워넣음
         for (let date = 1; date <= lastDate; date++) {
             const dateCell = document.createElement('div');
             const dayColor = new Date(year, month, date).getDay();
 
+            // 토요일 일요일 색깔 처리
             if(dayColor === 0){
                 dateCell.classList.add('date','sunday');
             }else if(dayColor === 6){
@@ -60,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 memoContainer.style.display = 'block';
                 const memoDate = document.querySelector('.memo-date');
                 memoDate.textContent = `${year}년 ${month + 1}월${date}일`
+                setDateCellStyle(dateCell);
             });
 
             calendarDate.appendChild(dateCell);
@@ -90,6 +92,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function setDateCellStyle(dateCell) {
+        resetDateCellStyle();
+        if (dateCell) {
+            dateCell.style.backgroundColor = 'skyblue';
+            dateCell.style.color = 'white';
+        }
+    }
+    
+    function resetDateCellStyle() {
+        const dateCells = document.querySelectorAll('.date');
+        dateCells.forEach(cell => {
+            cell.style.backgroundColor = '';
+            cell.style.color = '';
+        });
+    }
+
     prevBtn.addEventListener('click', () => {
         currentDate.setMonth(currentDate.getMonth() - 1);
         renderCalendar();
@@ -115,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     closeMemo.addEventListener('click', () => {
         memoContainer.style.display = 'none';
+        renderCalendar();
     });
 
     renderCalendar();

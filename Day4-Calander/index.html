@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>달력 및 메모</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="calendar-container">
             <div class="nav">
-                <button id="prevBtn">&lt;</button>
+                <span class="material-symbols-outlined" id="prevBtn">arrow_back_ios</span>
                 <!-- 해당 월 표시 부분 -->
                 <p class="calendar-month"></p>
-                <button id="nextBtn">&gt;</button>
+                <span class="material-symbols-outlined" id="nextBtn">arrow_forward_ios</span>
             </div>
             <!-- 요일 표시 부분 -->
             <div class="calendar-days">
@@ -29,11 +32,15 @@
             <div class="calendar-date"></div>
         </div>
         <div class="memo-container">
-            <h2 class="memo-date"></h2>
-            <ul class = "memo-list"></ul>
-            <textarea id="memoText" rows="10" cols="25"></textarea>
-            <button id="saveMemo">저장</button>
-            <button id="closeMemo">닫기</button>
+            <div class="memo-title">
+                <p class="memo-date"></p>
+                <button id="closeMemo" class="memo-close"><span class="material-symbols-outlined">close</span></button>
+            </div>
+            <ul class = "memo-list" id="memo-list"></ul>
+            <div class="memo-input-container">
+                <input type="text" id="memoText" class="memo-input">
+                <button id="saveMemo" class="memo-save">저장</button>
+            </div>            
         </div>
     </div>
     <script src="main.js"></script>

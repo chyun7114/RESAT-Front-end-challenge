@@ -19,6 +19,7 @@ body {
     width: 400px;
     margin: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
     padding: 10px;
     background-color: white;
 }
@@ -29,28 +30,32 @@ body {
     align-items: center;
 }
 
-.nav button {
+.nav span {
     border: none;
     background-color: white;
-    color: blue;
-    font-weight: bold;
+    color: #D3D3D3;
     cursor: pointer;
-    font-size: 36px;
+    font-size: 24px;
+    border-radius: 50%;
+}
+
+.nav button:hover{
+    color:white;
+    background-color: skyblue;
 }
 
 .calendar-month {
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .calendar-days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    font-weight: bold;
     text-align: center;
+    color: #D3D3D3;
 }
 
 .day {
-    border: 1px solid black;
     padding: 5px;
 }
 
@@ -62,33 +67,57 @@ body {
 }
 
 .date {
-    border: 1px solid black;
-    padding-bottom: 30px;
-    box-sizing: border-box;
+    padding: 20px;
     position: relative;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    border-radius: 100%;
+}
+
+.date:hover{
+    background-color: skyblue;
+    color: white;
 }
 
 .memo-indicator {
-    width: 10px;
-    height: 10px;
+    width: 3px;
+    height: 3px;
     border-radius: 50%;
     background-color: blue;
     position: absolute;
     bottom: 5px;
 }
 
+.date:hover .memo-indicator{
+    background-color: white;
+}
+
 .memo-container {
-    width: 200px;
+    width: 300px;
     margin: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     padding: 10px;
     background-color: white;
     display: none;
+    border-radius: 10px;
+}
+
+.memo-title{
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+}
+
+.memo-date{
+    margin: 0;
+    padding-top: 5px;
+}
+
+.memo-close{
+    background: none;
+    border: none;
 }
 
 .memo-list {
@@ -106,6 +135,26 @@ body {
     padding-bottom: 5px;
 }
 
+.memo-input-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.memo-input{
+    border: 0.5px solid #D3D3D3;
+    border-radius: 50px;
+    width: 250px;
+}
+
+.memo-save{
+    border-radius: 50px;
+    background-color: skyblue;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 3px;
+}
 
 .saturday {
     color: blue;
