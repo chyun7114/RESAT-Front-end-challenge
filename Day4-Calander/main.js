@@ -33,7 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (let date = 1; date <= lastDate; date++) {
             const dateCell = document.createElement('div');
-            dateCell.classList.add('date');
+            const dayColor = new Date(year, month, date).getDay();
+
+            if(dayColor === 0){
+                dateCell.classList.add('date','sunday');
+            }else if(dayColor === 6){
+                dateCell.classList.add('date', 'saturday');
+            }else{
+                dateCell.classList.add('date');
+            }
+
             dateCell.textContent = date;
 
             const memoKey = `${year}-${month + 1}-${date}`;
