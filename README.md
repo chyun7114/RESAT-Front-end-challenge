@@ -8,4 +8,4 @@ Day3 - TodoList
 (https://chyun7114.github.io/RESAT-Front-end-challenge/Day3-ToDoList/main.html)
 
 Day4 - Calander
-(https://chyun7114.github.io/RESAT-Front-end-challenge/Day4-Calander/index.html)
+(https://chyun7114.github.io/RESAT-Front-end-challenge/Day4-Calander)
