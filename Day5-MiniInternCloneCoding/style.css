@@ -257,6 +257,8 @@ p{
 
 .banner-title{
     width: 100%;
+    margin-top: 60px;
+    margin-bottom: 24px;
 }
 
 .banner-title p{
@@ -578,6 +580,10 @@ p{
     align-items: center;
 }
 
+.orange{
+    color: orange;
+}
+
 .status-wrapper p{
     margin: 0;
 }
@@ -599,14 +605,15 @@ p{
 
 .main-status{
     font-size: 14px;
+    color: black;
+    margin-bottom: 4px;
     font-weight: bold;
-    color: #1a1b1c;
-    margin: 0 0 4px;
 }
 
 .place-status{
-    color: #939999;
-    margin: 0 0 8px;
+    color: rgb(147, 153, 153);
+    font-size: 12px;
+    margin-bottom: 8px;
 }
 
 .number-status{
@@ -617,6 +624,7 @@ p{
 .happypolio-categories{
     display: flex;
     align-items: center;
+    font-size: 12px;
 }
 
 .happypolio-categories div{
@@ -663,17 +671,60 @@ p{
     color: #1a1b1c;
 }
 
-/* 서비스 홍보 칸 */
-.service-launching{
-    display: flex;
+/* 헤드헌팅 설정하기 */
+.head-hunting {
     position: relative;
-    margin: 60px 0px 0px;
-    padding: 20px 0px 0px;
     width: 100%;
-    height: 200px;
-    border: 1px solid black;
+    margin: 60px auto;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 5px;
 }
 
+.head-hunting-banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.head-hunting-banner-image:hover{
+    transform: scale(2);
+}
+
+.head-hunting-banner-text-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%; 
+    text-align: center;  
+    z-index: 1; 
+    padding: 45px 60px;
+}
+
+.head-hunting-description {
+    font-size: 21px;
+    word-break: keep-all;
+    color: rgb(255, 255, 255);
+    z-index: 1;
+}
+
+.head-hunting-setting{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 146px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+    padding: 12px 0px 13px;
+}
 
 /* footer 스타일 */
 .footer-wrapper{
