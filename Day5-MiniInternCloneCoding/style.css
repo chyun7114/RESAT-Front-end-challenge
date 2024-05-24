@@ -1,0 +1,180 @@
+body {
+    font-family: "Noto Sans", "Noto Sans KR", sans-serif;
+    box-sizing: border-box;
+    position: relative;
+    line-height: 1.5;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: baseline;
+    min-height: 100vh;
+    font-size: 0.875rem;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 61px;
+    border-bottom: 1px solid rgba(0,56,58,0.1);
+    background-color: white;
+}
+
+.header-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 70rem;
+    height: 100%;
+    margin: 0 auto;
+    flex-direction: row;
+}
+
+.menu-nav {
+    display: flex; /* flexbox 사용 */
+    align-items: center; /* 수직 정렬 */
+    height: 100%;
+    flex-grow: 1; /* 가능한 공간을 차지하도록 설정 */
+    overflow: hidden; /* 내용이 넘칠 경우 숨김 */
+    justify-content: center; /* 요소들을 가운데 정렬 */
+}
+
+
+.menu-nav ul{
+    display: flex;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-nav ul li{
+    display: inline-flex;
+    align-items: center;
+    margin-left: 1rem;
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.3s ease 0s;
+    font-size: 14px;
+}
+
+.menu-nav ul li a{
+    color: gray;
+}
+
+.menu-nav ul li a:hover{
+    color: black;
+}
+
+.menu-nav ul li a div{
+    position: relative;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 1.25rem 1rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease-in-out 0s;
+    font-weight: 400;
+    color: rgb(171, 177, 177);
+}
+
+.menu-nav ul li a div:after{
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    right: 0px;
+    height: 2px;
+    opacity: 0;
+    background: rgb(23, 161, 255);
+    transform: scaleX(0);
+    transition: all 0.3s ease 0s;
+}
+
+.menu-nav ul li a div:hover {
+    background-color: rgb(240, 240, 240);
+    color: black; 
+}
+
+.menu-nav ul li a div:hover:after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+
+.service-nav {
+    display: flex; /* flexbox 사용 */
+    align-items: center; /* 수직 정렬 */
+    height: 100%;
+    flex-grow: 1; /* 가능한 공간을 차지하도록 설정 */
+    overflow: hidden; /* 내용이 넘칠 경우 숨김 */
+    justify-content: center; /* 요소들을 가운데 정렬 */
+    margin-left: auto;
+}
+
+.service-nav ul{
+    display: flex;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.service-mnav ul li{
+    display: inline-flex;
+    align-items: center;
+    margin-left: 1rem;
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.3s ease 0s;
+    font-size: 14px;
+}
+
+.service-nav ul li a{
+    color: gray;
+}
+
+.service-nav ul li a:hover{
+    color: black;
+}
+
+.service-nav ul li a div{
+    position: relative;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 1.25rem 1rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease-in-out 0s;
+    font-weight: 400;
+    color: rgb(171, 177, 177);
+}
+
+.service-nav ul li a div:after{
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    right: 0px;
+    height: 2px;
+    opacity: 0;
+    background: rgb(23, 161, 255);
+    transform: scaleX(0);
+    transition: all 0.3s ease 0s;
+}
+
+.service-nav ul li a div:hover {
+    background-color: rgb(240, 240, 240);
+    color: black; 
+}
+
+.service-nav ul li a div:hover:after {
+    opacity: 1;
+    transform: scaleX(1);
+}
