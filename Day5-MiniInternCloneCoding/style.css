@@ -17,6 +17,10 @@ a{
     text-decoration: none;
 }
 
+p{
+    margin: 0;
+}
+
 /* 헤더 부분 */
 .header-wrapper {
     display: flex;
@@ -293,6 +297,76 @@ a{
 
 .main-section-body{
     width: 100%;
+}
+
+/* 중간 리크루잇 배너 */
+.recruit-banner{
+    display: flex;
+    position: relative;
+    margin: 60px 0px 0px;
+    padding: 20px 0px 0px;
+}
+
+.recruit-banner:before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    height: 230px;
+    left: -9999px;
+    right: -9999px;
+    z-index: -1;
+    background: rgb(249, 249, 249);
+}
+
+.banner-slide{
+    overflow: hidden;
+    flex-shrink: 0;
+    width: 335px;
+    height: 221px;
+    border-radius: 15px;
+}
+
+.recruit-banner-title{
+    display: block;
+    border: none;
+    margin: 0px;
+    cursor: pointer;
+    padding: calc(66%) 0px 0px;
+    width: 100%;
+    background: url(https://cdn-upload.miniintern.com/42751/ce8cd879-cd5f-4932-a451-55799b223333/스킬업7.png) 
+                0px 0px / cover no-repeat;
+}
+
+.recruit-banner-info-box{
+    position: relative;
+    width: 100%;
+    padding: 66px 0px 30px 30px;
+}
+
+.recruit-banner-info-badge{
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    padding: 8px 22px 9px 30px;
+    border-radius: 0px 17px 17px 0px;
+    background: rgb(23, 161, 255);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 17px;
+    color: rgb(255, 255, 255);
+}
+
+.recruit-banner-info-title{
+    font-size: 16px;
+    color: #939999;
+}
+
+.recruit-banner-info-sub{
+    margin-top: 4px;
+    font-size: 21px;
+    color: #1a1b1c;
+    font-weight: bold;
 }
 
 /* 홍보 박스 모두 공통 */
