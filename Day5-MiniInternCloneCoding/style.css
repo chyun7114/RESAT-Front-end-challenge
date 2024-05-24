@@ -185,18 +185,65 @@ a{
     width: 938px;
 }
 
-.main-banner{
+.main-banner {
     display: flex;
     justify-content: space-between;
     padding: 40px 0 60px;
     width: 100%;
-    height: 500px;
 }
 
-.main-banner-box{
-    border: 1px solid blue;
+.main-banner-box {
     border-radius: 10px;
-    gap: 18px;
+    box-sizing: border-box;
+    height: 400px; /* 동일한 높이 지정 */
+    overflow: hidden; /* 넘치는 이미지 숨기기 */
+    display: flex;
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    position: relative; /* 텍스트를 이미지 위에 겹치게 하기 위해 상대적 위치 지정 */
+}
+
+.main-banner-box img {
+    max-width: 100%; /* 이미지가 박스 크기에 맞도록 */
+    height: auto; /* 비율 유지하여 크기 조정 */
+    display: block; /* 이미지의 아래 여백 제거 */
+    border-radius: 10px; /* 박스의 테두리와 일치 */
+}
+
+.left {
+    width: 600px;
+}
+
+.right {
+    margin-left: 38px;
+    width: 300px;
+}
+
+.main-banner-box-desc {
+    width: 100%;
+    z-index: 12;
+    position: absolute; /* 이미지 위에 텍스트를 겹치게 하기 위해 절대적 위치 지정 */
+    top: 20px;
+    left: 20px;
+    color: white; /* 텍스트 색상 (필요 시 수정) */
+    text-align: left; /* 텍스트 중앙 정렬 */
+    padding: 10px; /* 텍스트 주위 여백 */
+}
+
+.main-banner-box p {
+    margin: 0; /* 문단의 기본 여백 제거 */
+    padding: 5px 0; /* 문단 주위 여백 */
+}
+
+.main-banner-box-sign-up{
+    width: 100%;
+    z-index: 12;
+    position: absolute; /* 이미지 위에 텍스트를 겹치게 하기 위해 절대적 위치 지정 */
+    bottom: 20px;
+    left: 20px;
+    color: white; /* 텍스트 색상 (필요 시 수정) */
+    text-align: left; /* 텍스트 중앙 정렬 */
+    padding: 10px; /* 텍스트 주위 여백 */
 }
 
 /* 모든 배너 생성 스타일*/
@@ -224,6 +271,10 @@ a{
     align-items: center;
 }
 
+.banner-subtitle a{
+    color: #17a1ff;
+}
+
 .banner-body{
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -247,9 +298,17 @@ a{
 /* 홍보 박스 모두 공통 */
 .box-4 {
     width: 100%;
-    height: 300px;
     border-radius: 5px;
     box-shadow: rgba(26, 27, 28, 0.12) 0px 4px 8px 0px;
+    transition: all 0.3s ease 0s;
+}
+
+.box-4:hover{
+    transform: translateY(-10px);
+}
+
+.box-4-a-tag{
+    text-decoration: none;
 }
 
 .box-2{
@@ -257,11 +316,277 @@ a{
     height: 150px;
     border-radius: 5px;
     box-shadow: rgba(26, 27, 28, 0.12) 0px 4px 8px 0px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    transition: all 0.3s ease 0s;
 }
 
-.main-section-box a{
+.box-2:hover{
+    transform: translateY(-10px);
+}
+
+.box-2-wrapper{
+    display: flex;
+    padding: 12px;
+    width: 100%;
+    position: relative;
+    align-items: center;
+}
+
+.box-2-a-tag{
+    text-decoration: none;
+}
+
+.box-2-card-image-wrapper{
+    width: 120px;
+    height: 120px;
+    margin-right: 12px;
+    position: relative;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.box-2-span{
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+    width: initial;
+    height: initial;
+    background: none;
+    opacity: 1;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    inset: 0px;
+}
+
+.box-2-image{
+    border-radius: 5px;
+    position: absolute;
+    inset: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+    border: none;
+    margin: auto;
+    display: block;
+    width: 0px;
+    height: 0px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.box-2-card-text-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box-2-card-text-wrapper .job{
+    margin: 0 0 2px;
+    color: rgb(147, 153, 153);
+    font-size: 12px;
+}
+
+.box-2-card-text-wrapper .job-name{
+    font-size: 14px;
+    font-weight: bold;
+    color: #1a1b1c;
+    margin: 0 0 4px;
+}
+
+.box-2-card-text-wrapper .job-company{
+    margin: 0 0 13px;
+    color: #1a1b1c;
+    font-weight: bold;
+    font-size: 12px;
+}
+.box-2-card-text-wrapper div{
+    display: flex;
+}
+.job-style{
+    border-radius: 5px;
+    background-color: rgb(241, 249, 255);
+    color: rgb(23, 161, 255);
+    padding: 0px 4px;
+    margin-right: 4px;
+    font-size: 12px;
+    display: flex;
+}
+
+.box-card-image-wrapper{
+    width: 100%;
+    position: relative;
+    padding-top: 75%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.box-card-image{
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: border 0.2s ease 0s;
+}
+
+.box-card-text-wrapper{
+    padding: 12px 12px 16px;
+}
+
+.box-card-text-status{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.text-status{
+    border-radius: 10px;
+    background-color: rgb(56, 64, 64);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    color: white;
+    padding: 1px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.text-sub{
+    color: rgb(147, 153, 153);
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.box-card-text-name{
+    margin-top: 8px;
+    font-weight: bold;
+    height: 42px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    word-break: break-all;
+    color: black;
+}
+
+.box-card-price{
+    padding: 3px 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.with-out-price{
+    background-color: #384040;
+    color: white;
+}
+
+.has-price{
+    background-color: #F0f3f3;
+    color: #384040;
+}
+
+.status-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-wrapper p{
+    margin: 0;
+}
+
+.status-quick{
+    color: #1bc481;
+    font-weight: bold;
+}
+
+.status-wrapper span{
+    color: #939999;
+    
+}
+
+.status{
+    margin: 0 0 4px;
+    color: #939999;
+}
+
+.main-status{
+    font-size: 14px;
+    font-weight: bold;
+    color: #1a1b1c;
+    margin: 0 0 4px;
+}
+
+.place-status{
+    color: #939999;
+    margin: 0 0 8px;
+}
+
+.number-status{
+    color: #1bc481;
+    margin: 0 0 6px;
+}
+
+.happypolio-categories{
+    display: flex;
+    align-items: center;
+}
+
+.happypolio-categories div{
+    background-color: #F0f3f3;
+    color: #939999;
+    padding: 2px 4px;
+}
+
+.happypolio-categories div:nth-child(2){
+    margin-left: 8px;
+}
+
+.happypolio-card-title{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #1a1b1c;
+}
+
+.happypolio-card-player-wrapper{
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.happyfolio-card-info-host-image-wrapper{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-right: 4px;
+}
+
+.happypolio-info-host-name{
+    color: #939999;
+    margin: 0;
+}
+
+.hppypolio-price{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1a1b1c;
 }
 
 /* 서비스 홍보 칸 */
@@ -273,4 +598,119 @@ a{
     width: 100%;
     height: 200px;
     border: 1px solid black;
+}
+
+
+/* footer 스타일 */
+.footer-wrapper{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 27px 0px 37px;
+    border-top: 1px solid rgb(229, 234, 234);
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+}
+
+.upper-footer{
+    margin: 0 auto;
+    width: 930px;
+}
+
+.lower-footer{
+    width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #939999;
+}
+
+.footer-wrapper-site-info-menu{
+    display: flex;
+    justify-content: space-between; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    position: relative;
+    z-index: 2;
+}
+
+.site-logo-box {
+    display: flex;
+    justify-content: center; /* 자식 요소를 수평 중앙 정렬 */
+    align-items: center; /* 자식 요소를 수직 중앙 정렬 */
+}
+
+.site-menu{
+    display: flex;
+}
+
+.site-menu li + li{
+    margin-left: 40px;
+}
+
+.site-menu li a{
+    display: inline-block;
+    color: rgb(26, 27, 28);
+    transition: all 0.3s ease 0s;
+}
+
+.site-menu li a:hover{
+    color: rgb(23, 161, 255);
+}
+
+.footer-wrapper-site-info ul{
+    padding: 0;
+}
+
+.footer-wrapper-site-info li{
+    display: flex;
+}
+
+.footer-wrapper-site-info li p{
+    margin: 0;
+}
+
+.service-title{
+    color: #1a1b1c;
+    font-size: 14px;
+    min-width: 82px;
+    font-weight: 700;
+}
+
+.service-info{
+    font-size: 12px;
+    line-height: 21px;
+    color: rgb(56, 64, 64);
+}
+
+.service-info a{
+    display: inline-block;
+    font-size: 12px;
+    line-height: 21px;
+    color: rgb(56, 64, 64);
+}
+
+.site-link{
+    margin-left: 4px;
+    font-weight: 700;
+}
+
+.site-link:hover{
+    color: rgb(23, 161, 255);
+}
+
+.footer-wrapper-company-info{
+    display: flex;  
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 3;
+}
+
+.footer-wrapper-company-info p{
+    font-size: 12px;
+    margin: 0;
+    color: #abb1b1;
+}
+
+.footer-wrapper-company-info a{
+    color: #abb1b1;
 }
