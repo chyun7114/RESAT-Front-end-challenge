@@ -141,11 +141,11 @@ p{
 }
 
 .service-nav ul li a{
-    color: gray;
+    color: rgb(23, 161, 255);
 }
 
-.service-nav ul li a:hover{
-    color: black;
+.service-nav ul li a{
+    color: gray;
 }
 
 .service-nav ul li a div{
@@ -321,6 +321,7 @@ p{
 }
 
 .banner-slide{
+    position: relative;
     overflow: hidden;
     flex-shrink: 0;
     width: 335px;
@@ -329,7 +330,6 @@ p{
 }
 
 .recruit-banner-title{
-    display: block;
     border: none;
     margin: 0px;
     cursor: pointer;
@@ -337,6 +337,37 @@ p{
     width: 100%;
     background: url(https://cdn-upload.miniintern.com/42751/ce8cd879-cd5f-4932-a451-55799b223333/스킬업7.png) 
                 0px 0px / cover no-repeat;
+}
+
+.recruit-banner-title-swiper{
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    margin-left: auto;
+    top: 15px;
+    right: 20px;
+}
+
+.bullet-swiper{
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 50%;
+    transition: all 0.2s ease-in 0s;  
+    display: inline-block; /* display 속성을 inline-block으로 변경 */
+    margin-right: 5px; /* bullet 사이의 간격 추가 */
+}
+
+.bullet-swiper-clicked{
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    transition: all 0.2s ease-in 0s;  
+    display: inline-block; /* display 속성을 inline-block으로 변경 */
+    margin-right: 5px; /* bullet 사이의 간격 추가 */
 }
 
 .recruit-banner-info-box{
@@ -500,6 +531,42 @@ p{
     padding-top: 75%;
     overflow: hidden;
     border-radius: 5px;
+}
+
+/* .box-card-image-wrapper:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: orange;
+    transition: all 0.3s ease 0s;
+    z-index: 3;
+} */
+
+.box-card-image-tag{
+    position: absolute;
+    top: 16px;
+    right: -50px;
+    padding: 5px 10px;
+    width: 40px;
+    height: 20px;
+    background-color: orange;
+    transition: all 0.3s ease 0s;
+}
+
+.box-4:hover .box-card-image-wrapper:after{
+    background-color: orange;
+}
+
+.box-4:hover .box-card-image-tag{
+    transform: translateX(-50px);
+}
+
+.box-card-image-tag span{
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .box-card-image{
