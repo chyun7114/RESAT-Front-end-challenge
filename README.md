@@ -13,3 +13,6 @@ Day5 - MiniIntern CLone Coding<br>
 
 Day6 - Image Slide #1 (Button Slide)<br>
 (https://chyun7114.github.io/RESAT-Front-end-challenge/Day6-CarasellSlide-1/)
+
+Day7 - Image Slide #2 (Auto Slide)<br>
+(https://chyun7114.github.io/RESAT-Front-end-challenge/Day7-CarasellSlide-2/)
