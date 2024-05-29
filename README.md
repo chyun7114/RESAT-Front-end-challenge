@@ -8,7 +8,7 @@ Day3 - TodoList<br>
 Day4 - Calander<br>
 (https://chyun7114.github.io/RESAT-Front-end-challenge/Day4-Calander)
 
-Day5 - MiniIntern CLone Coding<br>
+Day5 - MiniIntern CLone Coding (Add slide animation)<br>
 (https://chyun7114.github.io/RESAT-Front-end-challenge/Day5-MiniInternCloneCoding/)
 
 Day6 - Image Slide #1 (Button Slide)<br>
