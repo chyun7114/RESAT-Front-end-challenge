@@ -43,6 +43,10 @@ nav ul li:hover::after{
 }
 
 .dynamic-nav-content{
+    margin-left: 50%;
+    margin-top: 0;
+    height: 100vh;
+    background-color: #b3b3b3;
     display: none;
     list-style: none;
     flex-direction: column;
@@ -70,6 +74,7 @@ nav ul li:hover::after{
         justify-content: right;
         height: 50px;
         align-items: center;
+        background-color: #b3b3b3;
     }
 
     nav ul{
